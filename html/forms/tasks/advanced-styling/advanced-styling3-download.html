@@ -58,8 +58,66 @@
         border-radius: 5px;
       }
 
+      input + span {
+        position: relative;
+      }
+
+      input:required + span::before {
+        content: 'required';
+        position: absolute;
+        background-color: lightcoral;
+        color: white;
+        bottom: 35px;
+        right: 0;
+        padding: 4px;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 0.7em;
+      }
+
       input:hover, input:focus {
         background-color: #eee;
+      }
+
+      input:invalid {
+        border: 1px solid lightcoral;
+      }
+
+      input:invalid + span::after {
+        content: '✕';
+        background-color:  lightcoral;
+        position: absolute;
+        padding: 2px;
+        left: 4px;
+        top: 4px;
+        border-radius: 2px;
+      }
+
+      input:valid {
+        border: 1px solid lightgreen;
+      }
+
+      input:valid + span::after {
+        content: '✓';
+        background-color:  lightgreen;
+        position: absolute;
+        padding: 2px;
+        left: 4px;
+        top: 4px;
+        border-radius: 2px;
+      }
+
+      input:required:valid + span::before {
+        content: 'required';
+        position: absolute;
+        background-color: lightgreen;
+        color: white;
+        bottom: 35px;
+        right: 0;
+        padding: 4px;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 0.7em;
       }
 
       button {
